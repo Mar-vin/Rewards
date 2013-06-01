@@ -1,5 +1,10 @@
 Rewards::Application.routes.draw do
-  resources :creatures, ony: :show
+  resources :creatures, only: %i(show index) do
+    member { post :use_skill }
+  end
+
+  root 'creatures#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,16 +1,12 @@
 class Creature < ActiveRecord::Base
-  def level
-    level_map.select{ |xp_needed| xp_needed <= xp }.size - 1
-  end
+  has_many :item_ownerships, foreign_key: :owner_id
 
-  private
+  include UsesSkills
+  include OwnsItems
+  include HasLevel
 
-  def level_map
-    (0..50).map{ |level| xp_needed_for_lvl(level) }
-  end
+  after_initialize { @skill_list = {} }
 
-  def xp_needed_for_lvl(level)
-    hundreds = (level * 500 * (1.03 ** level)).to_i / 100
-    hundreds * 100
+  def increase_opinion(entity)
   end
 end

@@ -1,0 +1,3 @@
+<%- @creatures.each do |creature| -%>
+  <%= link_to creature.id, creature_path(creature) %>
+<%- end -%>

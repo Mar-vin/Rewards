@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130601124401) do
+ActiveRecord::Schema.define(version: 20130601175612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "creatures", force: true do |t|
-    t.integer  "xp"
+    t.integer  "xp",         default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "item_ownerships", force: true do |t|
+    t.integer  "owner_id",               null: false
+    t.string   "class_name",             null: false
+    t.integer  "amount",     default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
