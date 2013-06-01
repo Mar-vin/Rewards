@@ -3,6 +3,10 @@ module HasLevel
     level_map.select{ |xp_needed| xp_needed <= xp }.size - 1
   end
 
+  def receive_xp(amount)
+    self.xp += amount
+  end
+
   private
 
   def level_map
