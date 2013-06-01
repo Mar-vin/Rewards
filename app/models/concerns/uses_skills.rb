@@ -1,6 +1,10 @@
 module UsesSkills
   attr_reader :skill_list
 
+  def self.included(base)
+    base.after_initialize { @skill_list = {} }
+  end
+
   def add_skills(skills)
     @skill_list.merge!(skills)
   end

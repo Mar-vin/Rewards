@@ -14,8 +14,10 @@ describe Creature do
 
     it 'recieves items' do
       creature.receive_items(food: 2)
+      creature.reload.items.should == { food: 2 }
 
-      creature.items.should == { food: 2 }
+      creature.receive_items(food: 2)
+      creature.reload.items.should == { food: 4 }
     end
   end
 
