@@ -17,7 +17,13 @@ ActiveRecord::Schema.define(version: 20130601175612) do
   enable_extension "plpgsql"
 
   create_table "creatures", force: true do |t|
-    t.integer  "xp",         default: 0
+    t.integer  "xp",           default: 0
+    t.integer  "charisma",     default: 0
+    t.integer  "constitution", default: 0
+    t.integer  "dexterity",    default: 0
+    t.integer  "intelligence", default: 0
+    t.integer  "strength",     default: 0
+    t.integer  "wisdom",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
