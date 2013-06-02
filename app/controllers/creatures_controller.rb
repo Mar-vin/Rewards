@@ -1,6 +1,7 @@
 class CreaturesController < ApplicationController
+  before_filter :find_creature, only: [:show, :use_skill]
+
   def show
-    @creature = Creature.find(params[:id])
   end
 
   def index
@@ -8,9 +9,13 @@ class CreaturesController < ApplicationController
   end
 
   def use_skill
-    @creature = Creature.find(params[:id])
-    @creature.use(:gathering)
-
+    @creature.use(params[:skill])
     redirect_to creature_path(@creature)
+  end
+
+  private
+
+  def find_creature
+    @creature = Creature.find(params[:id])
   end
 end
