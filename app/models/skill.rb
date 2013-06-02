@@ -1,5 +1,5 @@
-class Skills::Skill
-  def execute
+class Skill
+  def execute(*args)
     raise 'not implemented'
   end
 
