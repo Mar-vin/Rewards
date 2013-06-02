@@ -3,6 +3,8 @@ Rewards::Application.routes.draw do
     member { post :use_skill }
   end
 
+  resources :locations, only: :show
+
   root 'creatures#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
