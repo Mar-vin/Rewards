@@ -29,7 +29,6 @@ group :test do
   gem 'turn', require: false
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'machinist'
   gem 'selenium-webdriver'
   gem 'rspec'
   gem 'database_cleaner'

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 shared_examples_for 'an experience cumulating entity'  do
-  let(:experience_cumulating_entity) { described_class.make! }
+  let(:experience_cumulating_entity) { described_class.new }
 
   it 'determines its level from the xp' do
     experience_cumulating_entity.receive_xp(1601)
