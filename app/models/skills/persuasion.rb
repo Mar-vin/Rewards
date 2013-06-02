@@ -1,7 +1,7 @@
 class Skills::Persuasion < Skill
-  def execute(entity, params)
-    if rand(100) <= entity.skill_level(name)
-      params[:target].increase_opinion(entity)
+  def execute(actor, params)
+    if rand(100) <= actor.skill_level(name)
+      params[:target].increase_opinion(actor)
     end
   end
 end
