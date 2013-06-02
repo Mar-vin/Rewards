@@ -21,10 +21,11 @@ shared_examples_for 'a skill user' do
     Skills::Persuasion.any_instance.should_receive(:execute).with(
       skill_user, an_instance_of(Hash)
     )
+
     skill_user.use(:persuasion, target: creature)
   end
 end
 
 describe Creature do
- it_behaves_like 'a skill user'
+  it_behaves_like 'a skill user'
 end

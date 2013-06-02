@@ -2,6 +2,7 @@ require 'spec_helper'
 
 shared_examples_for 'an item owner' do
   let(:item_owner) { described_class.make! }
+
   it 'recieves items' do
     item_owner.receive_items(food: 2)
     item_owner.reload.items.should == { food: 2 }
