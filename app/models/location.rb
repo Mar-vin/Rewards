@@ -1,5 +1,7 @@
 class Location < ActiveRecord::Base
-  def location
-    { x: x, y: y, z: z }
+  include HasCoordinates
+
+  def costs
+    self.class.costs
   end
 end

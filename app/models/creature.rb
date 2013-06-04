@@ -2,6 +2,7 @@ class Creature < ActiveRecord::Base
   include UsesSkills
   include OwnsItems
   include HasLevel
+  include HasCoordinates
 
   def character_attributes
     {

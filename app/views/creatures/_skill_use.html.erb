@@ -1,4 +1,7 @@
 <%= form_tag use_skill_creature_path(creature) do %>
   <%= hidden_field_tag :skill, skill %>
+  <% skill_params.each do |key,value| %>
+    <%= hidden_field_tag "skill_params[#{key}]",value %>
+  <% end %>
   <%= submit_tag description %>
 <%- end -%>

@@ -9,7 +9,7 @@ class CreaturesController < ApplicationController
   end
 
   def use_skill
-    @creature.use(params[:skill])
+    @creature.use(params[:skill], params[:skill_params])
     redirect_to creature_path(@creature)
   end
 

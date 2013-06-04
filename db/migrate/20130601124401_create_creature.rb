@@ -10,6 +10,10 @@ class CreateCreature < ActiveRecord::Migration
       t.integer :strength, default: 0
       t.integer :wisdom, default: 0
 
+      t.integer :x, null: false, default: 0
+      t.integer :y, null: false, default: 0
+      t.integer :z, null: false, default: 0
+
       t.timestamps
     end
   end

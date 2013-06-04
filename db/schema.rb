@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20130602125708) do
     t.integer  "intelligence", default: 0
     t.integer  "strength",     default: 0
     t.integer  "wisdom",       default: 0
+    t.integer  "x",            default: 0, null: false
+    t.integer  "y",            default: 0, null: false
+    t.integer  "z",            default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Shelter do
-  it { should have_a_location }
+  it { should cost(wood: 3)}
 
   describe '.establish' do
     it 'creates a Location' do

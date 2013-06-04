@@ -2,9 +2,16 @@
 <p>XP: <%= @creature.xp %></p>
 <p>Items: <%= @creature.items %></p>
 
+<div id='present-buildings'>
+  <%- @creature.present_locations.each do |location| -%>
+    <%= location %>
+  <%- end -%>
+</div>
+
 <p>
   Actions:<br/>
 
-  <%= render 'skill_use', creature: @creature, description: 'gather food', skill: :gathering %>
-  <%= render 'skill_use', creature: @creature, description: 'gather wood', skill: :woodcutting %>
+  <%= render 'skill_use', creature: @creature, description: 'gather food', skill: :gathering, skill_params: {} %>
+  <%= render 'skill_use', creature: @creature, description: 'gather wood', skill: :woodcutting, skill_params: {} %>
+  <%= render 'skill_use', creature: @creature, description: 'create shelter', skill: :building, skill_params: { building_type: 'shelter' } %>
 </p>

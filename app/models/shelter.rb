@@ -1,7 +1,11 @@
 class Shelter < Location
-  def self.establish(location)
+  def self.establish(coordinates)
     Location.create!(
-      type: 'Shelter', x: location[:x], y: location[:y], z: location[:z]
+      type: 'Shelter', x: coordinates[:x], y: coordinates[:y], z: coordinates[:z]
     )
+  end
+
+  def self.costs
+    { wood: 3 }
   end
 end
