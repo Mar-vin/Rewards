@@ -11,7 +11,7 @@
 <p>
   Actions:<br/>
 
-  <%= render 'skill_use', creature: @creature, description: 'gather food', skill: :gathering, skill_params: {} %>
-  <%= render 'skill_use', creature: @creature, description: 'gather wood', skill: :woodcutting, skill_params: {} %>
-  <%= render 'skill_use', creature: @creature, description: 'create shelter', skill: :building, skill_params: { building_type: 'shelter' } %>
+  <%= render 'skill_use', description: 'gather food', skill: :gathering, skill_params: {} %>
+  <%= render 'skill_use', description: 'gather wood', skill: :woodcutting, skill_params: {} %>
+  <%= render 'skill_use', description: 'create shelter', skill: :building, skill_params: { building_type: 'shelter' } %>
 </p>

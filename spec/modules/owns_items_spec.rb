@@ -11,19 +11,33 @@ shared_examples_for 'an item owner' do
     item_owner.reload.items.should == { food: 4 }
   end
 
-  context 'that has items' do
+  context 'that has more items than needed' do
     it 'can get items removed' do
       item_owner.receive_items(food: 6)
       item_owner.reload.remove_items(food: 3)
-      item_owner.reload.items.should == { food: 3}
+      item_owner.reload.items.should == { food: 3 }
+    end
+  end
+
+  context 'it has exactly the amount of items to be removed' do
+    before do
+      item_owner.receive_items(food: 3)
+    end
+
+    it 'removes the ownership' do
+      item_owner.reload.remove_items(food: 3)
+      item_owner.reload.items.should == {}
     end
   end
 
   context 'it does not have enough items' do
-    it 'removes all present items' do
+    before do
       item_owner.receive_items(food: 2)
+    end
+
+    it 'removes the ownership' do
       item_owner.reload.remove_items(food: 5)
-      item_owner.reload.items.should == { food: 0}
+      item_owner.reload.items.should == {}
     end
   end
 end

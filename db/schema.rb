@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20130602125708) do
   create_table "item_ownerships", force: true do |t|
     t.integer  "owner_id",               null: false
     t.string   "class_name",             null: false
-    t.integer  "amount",     default: 1
+    t.integer  "amount",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
